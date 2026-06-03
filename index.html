@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" translate="no">
 
 <head>
   <meta charset="utf-8">
@@ -829,22 +829,22 @@ And send back my kind of reply So we can smile together I'll send you a dog reel
 
                 <div class="col-md-6">
                   <label for="name-field" class="pb-2">你的名字</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <input type="text" name="name" id="name-field" class="form-control" required=""oninvalid="this.setCustomValidity('沒填不要一直按')" oninput="this.setCustomValidity('')">
                 </div>
 
                 <div class="col-md-6">
                   <label for="email-field" class="pb-2">你的伊媚兒</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <input type="email" class="form-control" name="email" id="email-field" required=""oninvalid="this.setCustomValidity('還沒填完不要一直按')" oninput="this.setCustomValidity('')">
                 </div>
 
                 <div class="col-md-12">
                   <label for="subject-field" class="pb-2">這我不知道要填啥填綽號好了</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <input type="text" class="form-control" name="subject" id="subject-field" required=""oninvalid="this.setCustomValidity('這裡確實蠻難想的但不要空白好嗎')" oninput="this.setCustomValidity('')">
                 </div>
 
                 <div class="col-md-12">
                   <label for="message-field" class="pb-2">你想說什麼O_o</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""oninvalid="this.setCustomValidity('寫一句話嘛拜託')" oninput="this.setCustomValidity('')"></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -891,7 +891,8 @@ And send back my kind of reply So we can smile together I'll send you a dog reel
     </div>
 
     <p class="mb-0" style="color: #666; font-size: 14px; letter-spacing: 1px;">
-        謝謝你滑到最下面 (´；ω；｀)
+        謝謝你滑到最下面 (´；ω；｀)<br>
+        R.I.P Balltze 2023.8.19
     </p>
 
 </div>
