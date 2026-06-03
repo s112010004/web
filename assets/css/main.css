@@ -45,7 +45,7 @@
 }
 
 .dark-background {
-  --background-color: #060606;
+  --background-color: #ffffff;
   --default-color: #fffff;
   --heading-color: #fffff;
   --surface-color: #252525;
@@ -89,20 +89,21 @@ h6 {
 
 /* PHP Email Form Messages
 ------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #fff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
+.php-email-form .error-message {display: none !important;
+  visibility: hidden !important; /* 隱藏元素 */
+  opacity: 0 !important;          /* 變成完全透明 */
+  height: 0 !important;           /* 高度歸零 */
+  padding: 0 !important;          /* 內邊距歸零（消滅紅色大區塊） */
+  margin: 0 !important;           /* 外邊距歸零 */
+  border: none !important;        /* 拔掉任何邊框 */
+  font-size: 0 !important;        /* 字體縮小到不見 */
 }
+
 
 .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #059652;
+  background: #ffc107;
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -1264,7 +1265,7 @@ section,
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 100px;
+  width: 300px;
   border-radius: 50%;
   border: 6px solid color-mix(in srgb, var(--default-color), transparent 85%);
   margin: 0 auto;
@@ -1395,15 +1396,29 @@ section,
 }
 
 .portfolio .portfolio-item .portfolio-info {
-  opacity: 0;
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: -100%;
-  z-index: 3;
-  transition: all ease-in-out 0.5s;
-  background: color-mix(in srgb, var(--background-color), transparent 10%);
-  padding: 15px;
+    opacity: 0;
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: -100%;
+    z-index: 3;
+    transition: all ease-in-out 0.5s;
+    /* 新增 1：預設清晰文字 */
+    color: white;           /* 統一文字為白色，比預設清晰 */
+    font-weight: bold;      /* 加粗文字 */
+    background: color-mix(in srgb, var(--background-color), transparent 10%);
+    padding: 15px;
+    /* 新增 2：背景效果 */
+    border-radius: 8px;     /* 邊角微圓 */
+    box-shadow: 0 4px 8px #ffc107; /* 添加陰影，讓背景更立體 */
+}
+
+/* 當滑鼠移入 portfolio-item 時，改變內部 portfolio-info 的樣式 */
+.portfolio .portfolio-item:hover .portfolio-info {
+    opacity: 1;             /* 變為完全顯示 */
+    bottom: 0px;            /* 滑動到與容器底部對齊 */
+    /* 新增 3：懸停時背景增強 */
+    background: #ffc107; /* 懸停時使用更濃密的半透明黑色背景 */
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {
